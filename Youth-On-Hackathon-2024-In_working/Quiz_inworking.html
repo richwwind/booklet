@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Generation</title>
+    <link rel="stylesheet" href="css/style_quiz.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="GAE Logo">
+            <!-- <span>GAE</span> -->
+        </div>
+        <ul>
+            <li><a href="index.html"><i class="material-icons">home</i> Home</a></li>
+            <li><a href="#"><i class="material-icons">info</i> About</a></li>
+            <li><a href="#"><i class="material-icons">book</i> Courses</a></li>
+            <li><a href="#"><i class="material-icons">group</i> Community</a></li>
+            <li><a href="#"><i class="material-icons">email</i> Contact</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+        <div class="login-buttons">
+            <a href="quiz.html" class="generate-button"><i class="material-icons">sparkles</i> Generate</a>
+        </div>
+    </div>
+
+    <h1>Quiz Generate</h1>
+    <textarea id="prompt" placeholder="Hãy nhập chủ đề mà bạn muốn"></textarea>
+    <div style="text-align: center;" id="container">
+        <div>
+            <label for="question-type">Questions Type:</label>
+            <select id="question-type">
+                <option value="Multiple Choice">Multiple Choice</option>
+                <option value="Multiple Response">Multiple Resposne</option>
+                <option value="True or False">True or False</option>
+            </select>
+        </div>
+        <div>
+        <label for="num-questions"> Max Questions:</label>
+        <select id="num-questions">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+        </select>
+        </div>
+        <div>
+            <div style="text-align: center;" class = "btn">
+                <button id="submit">Submit</button>
+                <button id="get">Get</button>
+            </div>
+        </div>
+        <div class="loader" id="loading">
+            Ready!
+        </div>
+    </div>
+
+    <script type="importmap">
+    {   
+      "imports": {
+        "@google/generative-ai": "https://esm.run/@google/generative-ai"
+      }
+    }
+  </script>
+
+    <!-- Script module để nhập và khởi tạo mô hình GenerativeAI -->
+    <div id="quiz-container"></div>
+    <script type="module" src="./frontjs/quiz.js"></script>
+    <div class="footer">
+        <p>&copy; 2024 GAE. All rights reserved.</p>
+    </div>
+</body>
+
+</html>
